@@ -3,4 +3,5 @@ python-dotenv
 pytz
 yagmail
 cryptography
-keyring
+keyrings
+keyrings.alt
