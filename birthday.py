@@ -133,7 +133,7 @@ def send_birthday_wish_today():
                 cc_list.pop(cc_list.index(mail))
                 to_mail.append(mail)
                 data_of_bd.append(value)
-    cc_list['nithishkxmar@gmail.com']
+    cc_list=['nithishkxmar@gmail.com']
     for val in range(len(data_of_bd)):
         subject,body=post_wish(data_of_bd[val])
         send_email(to_mail[val],cc_list,subject,body)
