@@ -25,5 +25,6 @@ jobs:
 
       - name: Run birthday script
         env:
+          EMAIL_KEY: ${{ secrets.EMAIL_KEY }}
           KEY: ${{ secrets.KEY }}
         run: python birthday.py
