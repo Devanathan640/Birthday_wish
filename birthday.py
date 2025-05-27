@@ -68,7 +68,10 @@ def decrypt_data(value,key):
     return key.decrypt(value.encode()).decode()
 
 def send_email(to_mail,cc,subject,body):
-    yag=yagmail.SMTP('devanathan.pain@gmail.com')
+    email='devanathan.pain@gmail.com'
+    app_key=os.getenv('EMAIL_KEY')
+    yagmail.register(email,app_key)
+    yag=yagmail.SMTP(email)
     yag.send(to_mail,subject=subject,cc=cc,contents=body)
     return
 
