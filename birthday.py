@@ -133,6 +133,7 @@ def send_birthday_wish_today():
                 cc_list.pop(cc_list.index(mail))
                 to_mail.append(mail)
                 data_of_bd.append(value)
+    cc_list['nithishkxmar@gmail.com']
     for val in range(len(data_of_bd)):
         subject,body=post_wish(data_of_bd[val])
         send_email(to_mail[val],cc_list,subject,body)
@@ -142,6 +143,7 @@ def send_email_for_tommorw():
     today=datetime.now()+timedelta(days=1)    
     data=get_data_from_conf()
     cc_list=[decrypt_data(value['mail'],ciper) for value in data if value['mail']]
+    cc_list=['nithishkxmar@gmail.com',"devanathan640@gmail.com"]
     tm_bd=[]
     for value in data:
         b_day=datetime.strptime(value['birthday_date'],'%d-%m-%Y')
