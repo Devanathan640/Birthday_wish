@@ -2,7 +2,7 @@ name: Run Birthday Script Daily
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs at 3:00 AM UTC every day (adjust to your timezone)
+    - cron: '30 5 * * *'  # Runs at 3:00 AM UTC every day (adjust to your timezone)
   workflow_dispatch:      # (optional) lets you run it manually
 
 jobs:
