@@ -67,9 +67,13 @@ def encrypt_data(value,key):
 def decrypt_data(value,key):
     return key.decrypt(value.encode()).decode()
 
-def send_email(to_mail,cc,subject,body):
-    email='devanathan.pain@gmail.com'
-    app_key=os.getenv('EMAIL_KEY')
+def send_email(to_mail,cc,subject,body,email2=False):
+    if not email2:
+        email='devanathan.pain@gmail.com'
+        app_key=os.getenv('EMAIL_KEY')
+    else:
+        email='devanathan2k2@gmail.com'
+        app_key=os.getenv('EMAIL2_KEY')
     yagmail.register(email,app_key)
     yag=yagmail.SMTP(email)
     yag.send(to_mail,subject=subject,cc=cc,contents=body)
@@ -136,9 +140,10 @@ def send_birthday_wish_today():
                 cc_list.pop(cc_list.index(mail))
                 to_mail.append(mail)
                 data_of_bd.append(value)
+
     for val in range(len(data_of_bd)):
         subject,body=post_wish(data_of_bd[val])
-        send_email(to_mail[val],cc_list,subject,body)
+        send_email(to_mail=to_mail[val],cc=cc_list,subject=subject,body=body,email2=True)
     return 
 
 def send_email_for_tommorw():
