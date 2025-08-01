@@ -73,7 +73,7 @@ def send_email(to_mail,cc,subject,body,email2=False):
         app_key=os.getenv('EMAIL_KEY')
     else:
         email='devanathan2k2@gmail.com'
-        app_key=os.getenv('EMAIL2_KEY')
+        app_key=os.getenv('EM')
     print(app_key)
     yagmail.register(email,app_key)
     yag=yagmail.SMTP(email)
