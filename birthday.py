@@ -68,6 +68,9 @@ def decrypt_data(value,key):
     return key.decrypt(value.encode()).decode()
 
 def send_email(to_mail,cc,subject,body,email2=False):
+    app_key=os.getenv('EMAIL_KEY')
+    app_key1=os.getenv('EM')
+    print(app_key,app_key1)
     if not email2:
         email='devanathan.pain@gmail.com'
         app_key=os.getenv('EMAIL_KEY')
