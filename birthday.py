@@ -69,14 +69,14 @@ def decrypt_data(value,key):
 
 def send_email(to_mail,cc,subject,body,email2=False):
     app_key=os.getenv('EMAIL_KEY')
-    app_key1=os.getenv('EM')
+    app_key1=os.getenv('EMAIL2_KEY')
     print(app_key,app_key1)
     if not email2:
         email='devanathan.pain@gmail.com'
         app_key=os.getenv('EMAIL_KEY')
     else:
         email='devanathan2k2@gmail.com'
-        app_key=os.getenv('EM')
+        app_key=os.getenv('EMAIL2_KEY')
     print(app_key)
     yagmail.register(email,app_key)
     yag=yagmail.SMTP(email)
